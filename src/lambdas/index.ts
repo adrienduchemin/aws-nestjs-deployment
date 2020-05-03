@@ -3,7 +3,7 @@ import { Code } from "@aws-cdk/aws-lambda"
 import { App } from "@aws-cdk/core"
 //to refacto with lerna lib
 import { IFunctionProps } from "../../../aws-nestjs-generic-deployment/dist/constructs/lambda.construct"
-import { IApiLambdaWithHistoryQueueStackProps, ApiLambdaWithHistoryQueueStack } from "../../../aws-nestjs-generic-deployment/dist/stacks/api-lambda-with-history.stack"
+import { IApiLambdaWithHistoryQueueStackProps, ApiLambdaWithHistoryQueueStack } from "../../../aws-nestjs-generic-deployment/dist/stacks/api-lambda-with-history-queue.stack"
 import { IApiLambdaStackProps, ApiLambdaStack } from "../../../aws-nestjs-generic-deployment/dist/stacks/api-lambda.stack"
 import { apiLambdas } from "./resources/api-lambda.resource"
 
