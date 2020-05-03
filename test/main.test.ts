@@ -1,24 +1,18 @@
-import { SynthUtils } from '@aws-cdk/assert'
-import { Code } from '@aws-cdk/aws-lambda'
-import { App } from '@aws-cdk/core'
-import { ApiLambdaWithHistoryStack } from '../../aws-nestjs-generic-deployment/dist/stacks/api-lambda-with-history.stack'
-import { ApiLambdaStackProps } from '../../aws-nestjs-generic-deployment/dist/stacks/api-lambda.stack'
-import { name } from '../package.json'
+import { CloudAssembly } from '@aws-cdk/cx-api'
+import app from '../src/main'
 
 describe('Main', () => {
-  let stack: ApiLambdaWithHistoryStack
+  let synth: CloudAssembly
 
   beforeAll(()=> {
-    const props: ApiLambdaStackProps = {
-      lambdaProps: {
-        code: Code.fromInline('lambda'),
-        handler: 'handler',
-      }
-    }
-    stack = new ApiLambdaWithHistoryStack(new App(), `${name}`, props)
+    synth = app.synth()
   })
 
   it('should not have changed', () => {
-    expect(SynthUtils.toCloudFormation(stack)).toMatchSnapshot()
+    expect(synth.stacks.length).toEqual(2)
+  })
+
+  it('should not have changed', () => {
+    expect(synth).toMatchSnapshot()
   })
 })

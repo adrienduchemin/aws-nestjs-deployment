@@ -32,7 +32,8 @@
   },
   "dependencies": {
     "@aws-cdk/aws-lambda": "1.36.1",
-    "@aws-cdk/core": "1.36.1"
+    "@aws-cdk/core": "1.36.1",
+    "@aws-cdk/cx-api": "^1.36.1"
   },
   "jest": {
     "moduleFileExtensions": [
