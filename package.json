@@ -3,12 +3,18 @@
   "version": "0.0.1",
   "scripts": {
     "cdk": "cdk",
+    "cdk:bootstrap": "cdk bootstrap",
+    "cdk:synth": "cdk synth",
+    "cdk:diff": "cdk diff",
+    "cdk:deploy": "cdk deploy",
+    "cdk:destroy": "cdk destroy",
     "prebuild": "rimraf dist",
     "build": "tsc -p tsconfig.build.json",
     "lint": "eslint \"{src,test}/**/*.ts\" --fix",
     "watch": "tsc -w -p tsconfig.build.json",
     "test": "jest",
     "test:watch": "jest --watch",
+    "test:update": "jest --updateSnapshot",
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand"
   },
@@ -33,7 +39,7 @@
   "dependencies": {
     "@aws-cdk/aws-lambda": "1.36.1",
     "@aws-cdk/core": "1.36.1",
-    "@aws-cdk/cx-api": "^1.36.1"
+    "@aws-cdk/cx-api": "1.36.1"
   },
   "jest": {
     "moduleFileExtensions": [
