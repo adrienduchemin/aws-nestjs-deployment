@@ -4,11 +4,8 @@ import { deploy as deployLambdas } from './lambdas'
 // should be a nest application with controllers to add a lambda to the db
 // or deploy the app or a specific resource, both from the db
 
-let app : App
+const app = new App()
 
-((): void => {
-    app = new App()
-    deployLambdas(app)
-})()
+deployLambdas(app)
 
 export default app
